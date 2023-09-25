@@ -1,15 +1,15 @@
 import axios from 'axios';
-import Qs from 'qs';
 import nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
+import Qs from 'qs';
 
-axios.defaults.baseURL = import.meta.env.VITE_API_GATEWAY_HOST;
+axios.defaults.baseURL = '';
 axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest';
-// axios.defaults.withCredentials = true;
 axios.defaults.paramsSerializer = (params) =>
-  Qs.stringify(params, {arrayFormat: 'repeat'});
+  Qs.stringify(params, { arrayFormat: 'repeat' });
 
-const calculatePercentage = (loaded, total) => Math.floor(loaded * 1.0) / total;
+const calculatePercentage = (loaded: number, total = 0) =>
+  Math.floor(loaded) / total;
 
 axios.defaults.onDownloadProgress = (e) => {
   const percentage = calculatePercentage(e.loaded, e.total);

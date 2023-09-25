@@ -15,9 +15,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "paths": {"@/*": ["./src/*"]},
-    "typeRoots": ["./node_modules/@types", "./src/@types"]
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] },
+    "typeRoots": ["node_modules/@types", "src/@types"]
   },
-  "include": ["src", "setupTests.ts", "./src/@types"],
-  "references": [{"path": "./tsconfig.node.json"}]
+  "include": ["src", "src/@types", "src/__mocks__"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

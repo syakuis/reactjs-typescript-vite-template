@@ -8,6 +8,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '\\.(css|less|sass|svg)$': 'identity-obj-proxy',
+    '^@/(.*)': '<rootDir>/src/$1',
   },
   testEnvironment: 'jsdom',
 };

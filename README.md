@@ -8,7 +8,7 @@
 - typescript v4
 - eslint v8
 - jest v29
-- json-server
+- msw
 - reactjs v18
 - react router
 - redux toolkit

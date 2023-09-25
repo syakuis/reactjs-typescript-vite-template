@@ -57,6 +57,19 @@ module.exports = {
       },
     ],
     "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
+    "import/order": ["error", {
+      "groups": [["builtin", "external"], "internal", "parent", "sibling", "index"],
+      "pathGroupsExcludedImportTypes": ["builtin"],
+      "newlines-between": "always",
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true,
+      },
+    }],
+    "comma-dangle": ["error", {
+      "arrays": "only-multiline",
+      "objects": "only-multiline",
+    }],
   },
   overrides: [
     {
@@ -64,9 +77,9 @@ module.exports = {
       parser: "@typescript-eslint/parser",
       extends: [
         "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/strict",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
         "plugin:prettier/recommended",
@@ -94,6 +107,13 @@ module.exports = {
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "react/prop-types": "off",
+        '@typescript-eslint/naming-convention': [
+          'error',
+          {
+            selector: ['typeLike', 'interface'],
+            format: ['PascalCase']
+          },
+        ],
       },
     },
     {

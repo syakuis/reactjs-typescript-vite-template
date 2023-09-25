@@ -1,3 +1,5 @@
+stats.html
+
 # Logs
 logs
 *.log
@@ -11,11 +13,13 @@ node_modules
 dist
 dist-ssr
 *.local
+*.local-test
 
 # Editor directories and files
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
+!.vscode/keybindings.json
 .idea
 .DS_Store
 *.suo
