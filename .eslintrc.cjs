@@ -1,3 +1,6 @@
+const { resolve } = require("node:path");
+const project = resolve(process.cwd(), "tsconfig.json");
+
 module.exports = {
   root: true,
   env: {
@@ -6,6 +9,7 @@ module.exports = {
     es2020: true,
   },
   parserOptions: {
+    project,
     sourceType: "module",
     ecmaFeatures: {
       jsx: true,
@@ -16,17 +20,21 @@ module.exports = {
       version: "detect",
     },
     "import/resolver": {
-      node: {},
+      node: {project},
       alias: {
         map: [["@", "./src"]],
       },
-      typescript: {},
     },
   },
   rules: {
     "no-console": "off",
     "import/no-unresolved": ["error", { commonjs: true, amd: true }],
-    "import/extensions": ["error", "never", { packages: "always" }],
+    "import/extensions": ["error", "ignorePackages", {
+      "ts": "never",
+      "tsx": "never",
+      "js": "never",
+      "jsx": "never",
+    }],
     "import/no-extraneous-dependencies": ["error"],
     "jsx-a11y/label-has-for": [
       "error",
@@ -94,12 +102,12 @@ module.exports = {
         "prettier",
       ],
       parserOptions: {
-        project: "./tsconfig.json",
+        project,
         createDefaultProgram: true,
       },
       settings: {
         "import/resolver": {
-          typescript: {},
+          typescript: {project},
         },
       },
       rules: {
@@ -123,4 +131,5 @@ module.exports = {
       rules: { "jest/prefer-expect-assertions": "off" },
     },
   ],
+  ignorePatterns: ["node_modules/", "dist/"],
 };
