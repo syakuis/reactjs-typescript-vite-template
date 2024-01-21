@@ -124,12 +124,5 @@ module.exports = {
         ],
       },
     },
-    {
-      files: ["(/__tests__/.*|(\\.|/)(test|spec))\\.[jt]sx?$"],
-      plugins: ["jest"],
-      extends: ["plugin:jest/recommended"],
-      rules: { "jest/prefer-expect-assertions": "off" },
-    },
   ],
-  ignorePatterns: ["node_modules/", "dist/"],
 };

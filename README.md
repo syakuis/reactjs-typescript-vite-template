@@ -7,34 +7,20 @@
 - vite v3
 - typescript v4
 - eslint v8
-- jest v29
-- msw
 - reactjs v18
-- react router
-- redux toolkit
-- store
-- nanoid
-- MUI5
 
 ## 폴더구조
 
 ```
 ├─ .github - Github 설정
 ├─ .vscode - VS Code 설정
-├─ mocks - json-server
 ├─ public - 빌드시 그대로 복사되는 정적 파일들 (style, image, fonts, svg...)
 ├─ src
 | ├─ @types - typescript type 선언
 | ├─ assets - 빌드시 참조되는 정적 파일들
 | ├─ components
-| | └─ common - 공통 컴포넌트
-| | └─ domain - 도메인 컴포넌트
-| ├─ constants - 상수 모음
-| ├─ containers - 현재 앱에 필요한 화면 컨테이너들 (컴포넌트들의 조합된 결과물)
-| ├─ endpoints - 서버 통신 구현 파일 (axios functions)
-| ├─ layouts - 레이아웃 구현 파일 (header, footer)
-| ├─ stores - 상태 관리 구현 파일 (redux store , slice )
-| └─ utils - 유용한 함수들 모음 (common utils functions)
+| ├─ containers
+| └─ layouts
 ```
 
 ## 시작하기
@@ -58,7 +44,6 @@ $ npm install
 ```
 $ npm run dev
 $ npm run build
-$ npm run test
 ```
 
 ### 환경변수
@@ -75,7 +60,3 @@ $ npm run test
 ```
 $ npm run dev -m prod
 ```
-
-### json-server
-
-기본포트: 3000
